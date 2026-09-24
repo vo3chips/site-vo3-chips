@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resultados oficiais das provas cronometradas pela VO3 Chips desde 2015.">
+  <meta name="theme-color" content="#121212">
+  <title>VO3 Chips | Resultados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#resultados">Ir para os resultados</a>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="VO3 Chips — início">
+      <span class="brand-mark">VO<span>3</span></span>
+      <strong>CHIPS</strong>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#resultados">Resultados</a>
+      <a href="#como-consultar">Como consultar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <img src="assets/banner-vo3-chips.png" alt="VO3 Chips — cronometragem esportiva para natação, ciclismo e corrida">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Cronometragem esportiva desde 2015</p>
+        <h1>Seu tempo.<br><em>Seu resultado.</em></h1>
+        <p>Consulte os resultados oficiais das provas cronometradas pela VO3 Chips.</p>
+        <a class="primary-button" href="#resultados">Consultar resultados</a>
+      </div>
+    </section>
+
+    <section class="results-section" id="resultados">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark">Arquivo de provas</p>
+          <h2>Encontre seu resultado</h2>
+        </div>
+        <p>Pesquise pelo nome da prova, cidade ou ano. Novos resultados serão adicionados gradualmente.</p>
+      </div>
+
+      <div class="search-panel" role="search">
+        <label class="search-field">
+          <span>Buscar prova</span>
+          <input id="search" type="search" placeholder="Ex.: corrida, Vitória da Conquista..." autocomplete="off">
+        </label>
+        <label>
+          <span>Ano</span>
+          <select id="year-filter"><option value="">Todos os anos</option></select>
+        </label>
+        <label>
+          <span>Modalidade</span>
+          <select id="sport-filter">
+            <option value="">Todas</option>
+            <option value="Corrida">Corrida</option>
+            <option value="Ciclismo">Ciclismo</option>
+            <option value="Natação">Natação</option>
+            <option value="Triathlon">Triathlon</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="results-meta">
+        <p id="result-count" aria-live="polite">Carregando provas...</p>
+        <button id="clear-filters" type="button">Limpar filtros</button>
+      </div>
+      <div id="race-list" class="race-grid"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <strong>Nenhuma prova encontrada</strong>
+        <p>Tente outro nome, ano ou modalidade.</p>
+      </div>
+    </section>
+
+    <section class="how-section" id="como-consultar">
+      <div>
+        <p class="eyebrow">Consulta simples</p>
+        <h2>Do arquivo histórico ao resultado pesquisável</h2>
+      </div>
+      <ol>
+        <li><span>01</span><div><strong>Escolha a prova</strong><p>Use a busca ou filtre pelo ano e modalidade.</p></div></li>
+        <li><span>02</span><div><strong>Abra o resultado</strong><p>Provas históricas podem ser publicadas em PDF.</p></div></li>
+        <li><span>03</span><div><strong>Encontre seu nome</strong><p>Nas provas recentes, pesquise por atleta, número ou categoria.</p></div></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand footer-brand"><span class="brand-mark">VO<span>3</span></span><strong>CHIPS</strong></div>
+    <p>Cronometragem esportiva • Bahia</p>
+    <p>© <span id="current-year"></span> VO3 Chips</p>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
