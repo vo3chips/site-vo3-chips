@@ -76,5 +76,79 @@
       {"distance": "7,3 km", "category": "Militar", "sex": "Feminino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_militar_7,3km_fem.pdf"},
       {"distance": "7,3 km", "category": "Militar", "sex": "Masculino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_militar_7,3km_mas.pdf"}
     ]
+  },
+  {
+    "id": "20151010_corrida-da-caerc",
+    "name": "Corrida da CAERC 2015",
+    "date": "2015-10-10",
+    "year": 2015,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e da categoria militar.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20151010_corrida-da-caerc/20151010_corrida-da-caerc_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20151010_corrida-da-caerc/20151010_corrida-da-caerc_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20151010_corrida-da-caerc/20151010_corrida-da-caerc_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20151010_corrida-da-caerc/20151010_corrida-da-caerc_geral_10km_mas.pdf"},
+      {"distance": "5 km", "category": "Militar", "sex": "Feminino", "file": "resultados/2015/20151010_corrida-da-caerc/20151010_corrida-da-caerc_militar_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Militar", "sex": "Masculino", "file": "resultados/2015/20151010_corrida-da-caerc/20151010_corrida-da-caerc_militar_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Militar", "sex": "Feminino", "file": "resultados/2015/20151010_corrida-da-caerc/20151010_corrida-da-caerc_militar_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Militar", "sex": "Masculino", "file": "resultados/2015/20151010_corrida-da-caerc/20151010_corrida-da-caerc_militar_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20151017_cacau-running-etapa-bataclan",
+    "name": "Cacau Running - Etapa Bataclan",
+    "date": "2015-10-17",
+    "year": 2015,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20151017_cacau-running-etapa-bataclan/20151017_cacau-running_etapa-bataclan_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20151017_cacau-running-etapa-bataclan/20151017_cacau-running_etapa-bataclan_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20151017_cacau-running-etapa-bataclan/20151017_cacau-running_etapa-bataclan_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20151017_cacau-running-etapa-bataclan/20151017_cacau-running_etapa-bataclan_geral_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20151213_simulado-do-pirata",
+    "name": "Simulado do Pirata",
+    "date": "2015-12-13",
+    "year": 2015,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["7 km"],
+    "format": "PDF",
+    "note": "Resultados gerais.",
+    "results": [
+      {"distance": "7 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20151213_simulado-do-pirata/20151213_simulado-do-pirata_geral_7km_fem.pdf"},
+      {"distance": "7 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20151213_simulado-do-pirata/20151213_simulado-do-pirata_geral_7km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20151220_desafio-sape-olivenca",
+    "name": "Desafio Sapê-Olivença",
+    "date": "2015-12-20",
+    "year": 2015,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["8 km", "20 km"],
+    "format": "PDF",
+    "note": "Resultados gerais.",
+    "results": [
+      {"distance": "8 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20151220_desafio-sape-olivenca/20151220_desafio-sape-olivenca_geral_8km_fem.pdf"},
+      {"distance": "8 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20151220_desafio-sape-olivenca/20151220_desafio-sape-olivenca_geral_8km_mas.pdf"},
+      {"distance": "20 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20151220_desafio-sape-olivenca/20151220_desafio-sape-olivenca_geral_20km_fem.pdf"},
+      {"distance": "20 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20151220_desafio-sape-olivenca/20151220_desafio-sape-olivenca_geral_20km_mas.pdf"}
+    ]
   }
 ]
