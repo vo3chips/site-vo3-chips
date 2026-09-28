@@ -16,7 +16,8 @@ function render() {
   const year = el.year.value;
   const sport = el.sport.value;
   const filtered = state.races.filter(race => {
-    const haystack = normalize(`${race.name} ${race.city} ${race.state} ${race.year}`);
+    const resultTerms = (race.results || []).map(result => `${result.distance} ${result.category} ${result.sex}`).join(' ');
+    const haystack = normalize(`${race.name} ${race.city} ${race.state} ${race.year} ${race.sport} ${resultTerms}`);
     return (!term || haystack.includes(term)) && (!year || String(race.year) === year) && (!sport || race.sport === sport);
   });
   el.count.textContent = `${filtered.length} ${filtered.length === 1 ? 'prova encontrada' : 'provas encontradas'}`;
@@ -25,9 +26,9 @@ function render() {
     <article class="race-card" data-format="${race.format}">
       <span class="race-year">${race.year}</span>
       <h3>${race.name}</h3>
-      <p class="race-location">${race.city} · ${race.state}</p>
+      <p class="race-location">${race.city} · ${race.state}${race.date ? ` · ${race.date.split('-').reverse().join('/')}` : ''}</p>
       <div class="race-tags"><span class="tag">${race.sport}</span><span class="tag">${race.format}</span></div>
-      ${race.file ? `<a class="race-link" href="${race.file}">${race.format === 'CSV' ? 'Consultar atletas →' : 'Abrir resultado →'}</a>` : '<span class="race-link" aria-disabled="true">Resultado em preparação</span>'}
+      ${(race.results || []).length ? `<div class="race-links">${race.results.map(result => `<a class="race-link" href="${result.file}" target="_blank" rel="noopener">${[result.distance, result.category, result.sex].filter(Boolean).join(' · ')} →</a>`).join('')}</div>` : race.file ? `<a class="race-link" href="${race.file}">${race.format === 'CSV' ? 'Consultar atletas →' : 'Abrir resultado →'}</a>` : '<span class="race-link" aria-disabled="true">Resultado em preparação</span>'}
     </article>`).join('');
 }
 
