@@ -28,7 +28,7 @@ function render() {
       <h3>${race.name}</h3>
       <p class="race-location">${race.city} · ${race.state}${race.date ? ` · ${race.date.split('-').reverse().join('/')}` : ''}</p>
       <div class="race-tags"><span class="tag">${race.sport}</span><span class="tag">${race.format}</span></div>
-      ${(race.results || []).length ? `<div class="race-links">${race.results.map(result => `<a class="race-link" href="${result.file}" target="_blank" rel="noopener">${[result.distance, result.category, result.sex].filter(Boolean).join(' · ')} →</a>`).join('')}</div>` : race.file ? `<a class="race-link" href="${race.file}">${race.format === 'CSV' ? 'Consultar atletas →' : 'Abrir resultado →'}</a>` : '<span class="race-link" aria-disabled="true">Resultado em preparação</span>'}
+      ${(race.results || []).length === 1 ? `<a class="race-link" href="${race.results[0].file}" target="_blank" rel="noopener">${[race.results[0].distance, race.results[0].category, race.results[0].sex].filter(Boolean).join(' · ')} →</a>` : (race.results || []).length > 1 ? `<details class="race-results"><summary>Ver ${race.results.length} resultados</summary><div class="race-links">${race.results.map(result => `<a class="race-link" href="${result.file}" target="_blank" rel="noopener">${[result.distance, result.category, result.sex].filter(Boolean).join(' · ')} →</a>`).join('')}</div></details>` : race.file ? `<a class="race-link" href="${race.file}">${race.format === 'CSV' ? 'Consultar atletas →' : 'Abrir resultado →'}</a>` : '<span class="race-link" aria-disabled="true">Resultado em preparação</span>'}
     </article>`).join('');
 }
 

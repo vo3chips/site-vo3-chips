@@ -18,5 +18,63 @@
         "file": "resultados/2015/20150307_simulado-vo3girls/20150307_simulado-vo3girls_5km_fem.pdf"
       }
     ]
+  },
+  {
+    "id": "20150328_cacau-running-etapa-coroneis",
+    "name": "Cacau Running - Etapa Coronéis",
+    "date": "2015-03-28",
+    "year": 2015,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultado geral da primeira corrida do Circuito Cacau Running - Ilhéus.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20150328_cacau-running-etapa-coroneis/20150328_cacau-running_etapa-coroneis_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20150328_cacau-running-etapa-coroneis/20150328_cacau-running_etapa-coroneis_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20150328_cacau-running-etapa-coroneis/20150328_cacau-running_etapa-coroneis_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20150328_cacau-running-etapa-coroneis/20150328_cacau-running_etapa-coroneis_geral_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20150613_cacau-running-etapa-chocolate",
+    "name": "Cacau Running - Etapa Chocolate",
+    "date": "2015-06-13",
+    "year": 2015,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais do Circuito Cacau Running - Etapa Chocolate.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20150613_cacau-running-etapa-chocolate/20150613_cacau-running_etapa-chocolate_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20150613_cacau-running-etapa-chocolate/20150613_cacau-running_etapa-chocolate_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20150613_cacau-running-etapa-chocolate/20150613_cacau-running_etapa-chocolate_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20150613_cacau-running-etapa-chocolate/20150613_cacau-running_etapa-chocolate_geral_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20150711_corrida-do-fogo-ilheus",
+    "name": "17ª Corrida do Fogo de Ilhéus",
+    "date": "2015-07-11",
+    "year": 2015,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["7,3 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e por categoria.",
+    "results": [
+      {"distance": "7,3 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_geral_7,3km_fem.pdf"},
+      {"distance": "7,3 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_geral_7,3km_mas.pdf"},
+      {"distance": "7,3 km", "category": "Juvenil", "sex": "Feminino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_juvenil_7,3km_fem.pdf"},
+      {"distance": "7,3 km", "category": "Juvenil", "sex": "Masculino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_juvenil_7,3km_mas.pdf"},
+      {"distance": "7,3 km", "category": "Master", "sex": "Feminino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_master_7,3km_fem.pdf"},
+      {"distance": "7,3 km", "category": "Master", "sex": "Masculino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_master_7,3km_mas.pdf"},
+      {"distance": "7,3 km", "category": "Militar", "sex": "Feminino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_militar_7,3km_fem.pdf"},
+      {"distance": "7,3 km", "category": "Militar", "sex": "Masculino", "file": "resultados/2015/20150711_corrida-do-fogo-ilheus/20150711_corrida-do-fogo-2015_militar_7,3km_mas.pdf"}
+    ]
   }
 ]
