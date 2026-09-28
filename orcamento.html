@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Solicite um orçamento de cronometragem esportiva para seu evento com a VO3 Chips.">
+  <meta name="theme-color" content="#121212">
+  <title>Solicite orçamento | VO3 Chips</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20260928-8">
+</head>
+<body>
+  <a class="skip-link" href="#formulario">Ir para o formulário</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="VO3 Chips — início"><img src="assets/logo-vo3-chips.png" alt="VO3 Chips" width="150" height="60" style="width:150px;height:60px;object-fit:contain;display:block"></a>
+    <nav aria-label="Navegação principal">
+      <a href="index.html#resultados">Resultados</a>
+      <a href="index.html#como-consultar">Como consultar</a>
+      <a href="orcamento.html" aria-current="page">Solicite orçamento</a>
+    </nav>
+  </header>
+  <main class="quote-page">
+    <header class="quote-intro">
+      <p class="eyebrow dark">Cronometragem para seu evento</p>
+      <h1>Solicite orçamento</h1>
+      <p>Conte-nos os principais dados da prova. A equipe VO3 Chips analisará as informações e entrará em contato.</p>
+    </header>
+    <div class="quote-layout">
+      <form class="quote-form" id="formulario" action="https://formsubmit.co/vo3.chips@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nova solicitação de orçamento — Site VO3 Chips">
+        <input type="hidden" name="_next" value="https://vo3chips.github.io/site-vo3-chips/orcamento-enviado.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+        <p class="required-note">Campos marcados com * são obrigatórios.</p>
+        <label class="form-field"><span>Nome *</span><input type="text" name="Nome" autocomplete="name" required></label>
+        <label class="form-field"><span>E-mail *</span><input type="email" name="E-mail" autocomplete="email" required></label>
+        <label class="form-field"><span>WhatsApp *</span><input type="tel" name="WhatsApp" autocomplete="tel" placeholder="(DDD) número" required></label>
+        <label class="form-field"><span>Tipo de evento *</span><input type="text" name="Tipo de evento" required></label>
+        <label class="form-field full"><span>Local *</span><input type="text" name="Local" placeholder="Cidade, estado e local da prova" required></label>
+        <label class="form-field"><span>Data *</span><input type="date" name="Data" required></label>
+        <label class="form-field"><span>Horário da largada *</span><input type="time" name="Horário da largada" required></label>
+        <label class="form-field">
+          <span>Modalidade (distância) *</span>
+          <select name="Modalidade (distância)" required>
+            <option value="" selected disabled>Selecione</option><option value="5 km">5 km</option><option value="10 km">10 km</option><option value="21 km">21 km</option><option value="42 km">42 km</option><option value="Outra">Outra</option>
+          </select>
+        </label>
+        <label class="form-field"><span>Quantidade prevista de participantes *</span><input type="number" name="Quantidade prevista de participantes" min="1" inputmode="numeric" required></label>
+        <fieldset class="radio-field">
+          <legend>Largada e chegada no mesmo local? *</legend>
+          <div class="radio-options"><label><input type="radio" name="Largada e chegada no mesmo local" value="Sim" required> Sim</label><label><input type="radio" name="Largada e chegada no mesmo local" value="Não" required> Não</label></div>
+        </fieldset>
+        <label class="form-field full"><span>Observações</span><textarea name="Observações" placeholder="Inclua outras informações importantes sobre o evento."></textarea></label>
+        <div class="form-actions"><button class="primary-button" type="submit">Enviar solicitação</button><small>Responderemos pelos contatos informados.</small></div>
+      </form>
+      <aside class="contact-card" aria-labelledby="contato-titulo">
+        <p class="eyebrow">Fale com a VO3 Chips</p><h2 id="contato-titulo">Contato</h2>
+        <dl>
+          <div><dt>E-mail</dt><dd><a href="mailto:vo3.chips@gmail.com">vo3.chips@gmail.com</a></dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5573991319044">(73) 9 9131-9044</a></dd></div>
+        </dl>
+      </aside>
+    </div>
+  </main>
+  <footer><div class="footer-logo-plate"><img src="assets/logo-vo3-chips.png" alt="VO3 Chips" width="105" height="66"></div><p>VO3 Chips · Cronometragem esportiva desde 2015</p></footer>
+</body>
+</html>
