@@ -1,4 +1,4 @@
-const state = { races: [] };
+const state = { races: [], showAll: false };
 const el = {
   search: document.querySelector('#search'),
   year: document.querySelector('#year-filter'),
@@ -6,7 +6,8 @@ const el = {
   list: document.querySelector('#race-list'),
   count: document.querySelector('#result-count'),
   empty: document.querySelector('#empty-state'),
-  clear: document.querySelector('#clear-filters')
+  clear: document.querySelector('#clear-filters'),
+  showMore: document.querySelector('#show-more-results')
 };
 
 const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -20,9 +21,16 @@ function render() {
     const haystack = normalize(`${race.name} ${race.city} ${race.state} ${race.year} ${race.sport} ${resultTerms}`);
     return (!term || haystack.includes(term)) && (!year || String(race.year) === year) && (!sport || race.sport === sport);
   });
-  el.count.textContent = `${filtered.length} ${filtered.length === 1 ? 'prova encontrada' : 'provas encontradas'}`;
+  const hasFilters = Boolean(term || year || sport);
+  const visible = hasFilters || state.showAll ? filtered : filtered.slice(0, 3);
+  el.count.textContent = hasFilters
+    ? `${filtered.length} ${filtered.length === 1 ? 'prova encontrada' : 'provas encontradas'}`
+    : `Exibindo ${visible.length} de ${filtered.length} provas`;
   el.empty.hidden = filtered.length > 0;
-  el.list.innerHTML = filtered.map(race => `
+  el.showMore.hidden = hasFilters || filtered.length <= 3;
+  el.showMore.textContent = state.showAll ? 'Ver menos resultados' : 'Ver mais resultados';
+  el.showMore.setAttribute('aria-expanded', String(state.showAll));
+  el.list.innerHTML = visible.map(race => `
     <article class="race-card" data-format="${race.format}">
       <span class="race-year">${race.year}</span>
       <h3>${race.name}</h3>
@@ -36,7 +44,7 @@ async function loadRaces() {
   try {
     const response = await fetch('data/provas.json');
     if (!response.ok) throw new Error('Falha ao carregar');
-    state.races = await response.json();
+    state.races = (await response.json()).sort((a, b) => String(b.date).localeCompare(String(a.date)));
     [...new Set(state.races.map(r => r.year))].sort((a,b) => b-a).forEach(year => el.year.insertAdjacentHTML('beforeend', `<option value="${year}">${year}</option>`));
     render();
   } catch {
@@ -46,6 +54,11 @@ async function loadRaces() {
 }
 
 [el.search, el.year, el.sport].forEach(input => input.addEventListener('input', render));
-el.clear.addEventListener('click', () => { el.search.value = ''; el.year.value = ''; el.sport.value = ''; render(); el.search.focus(); });
+el.clear.addEventListener('click', () => { el.search.value = ''; el.year.value = ''; el.sport.value = ''; state.showAll = false; render(); el.search.focus(); });
+el.showMore.addEventListener('click', () => {
+  state.showAll = !state.showAll;
+  render();
+  if (!state.showAll) document.querySelector('#resultados').scrollIntoView({ behavior: 'smooth' });
+});
 document.querySelector('#current-year').textContent = new Date().getFullYear();
 loadRaces();
