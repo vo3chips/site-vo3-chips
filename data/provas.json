@@ -150,5 +150,161 @@
       {"distance": "20 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2015/20151220_desafio-sape-olivenca/20151220_desafio-sape-olivenca_geral_20km_fem.pdf"},
       {"distance": "20 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2015/20151220_desafio-sape-olivenca/20151220_desafio-sape-olivenca_geral_20km_mas.pdf"}
     ]
+  },
+  {
+    "id": "20160319_cacau-running-etapa-coroneis",
+    "name": "Cacau Running - Etapa Coronéis",
+    "date": "2016-03-19",
+    "year": 2016,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e por faixa etária.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2016/20160319_cacau-running-etapa-coroneis/20160319_cacau-running_etapa-coroneis_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2016/20160319_cacau-running-etapa-coroneis/20160319_cacau-running_etapa-coroneis_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2016/20160319_cacau-running-etapa-coroneis/20160319_cacau-running_etapa-coroneis_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2016/20160319_cacau-running-etapa-coroneis/20160319_cacau-running_etapa-coroneis_geral_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20160723_cacau-running-etapa-chocolate",
+    "name": "Cacau Running - Etapa Chocolate",
+    "date": "2016-07-23",
+    "year": 2016,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e por faixa etária.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2016/20160723_cacau-running-etapa-chocolate/20160723_cacau-running_etapa-chocolate_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2016/20160723_cacau-running-etapa-chocolate/20160723_cacau-running_etapa-chocolate_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2016/20160723_cacau-running-etapa-chocolate/20160723_cacau-running_etapa-chocolate_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2016/20160723_cacau-running-etapa-chocolate/20160723_cacau-running_etapa-chocolate_geral_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20161112_cacau-running-etapa-bataclan",
+    "name": "Cacau Running - Etapa Bataclan",
+    "date": "2016-11-12",
+    "year": 2016,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2016/20161112_cacau-running-etapa-bataclan/20161112_cacau-running_etapa-bataclan_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2016/20161112_cacau-running-etapa-bataclan/20161112_cacau-running_etapa-bataclan_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2016/20161112_cacau-running-etapa-bataclan/20161112_cacau-running_etapa-bataclan_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2016/20161112_cacau-running-etapa-bataclan/20161112_cacau-running_etapa-bataclan_geral_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20170326_cacau-running-etapa-coroneis",
+    "name": "Cacau Running - Etapa Coronéis",
+    "date": "2017-03-26",
+    "year": 2017,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e por faixa etária.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20170326_cacau-running-etapa-coroneis/20170326_cacau-running_etapa-coroneis_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20170326_cacau-running-etapa-coroneis/20170326_cacau-running_etapa-coroneis_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20170326_cacau-running-etapa-coroneis/20170326_cacau-running_etapa-coroneis_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20170326_cacau-running-etapa-coroneis/20170326_cacau-running_etapa-coroneis_geral_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20170708_corrida-do-fogo-ilheus",
+    "name": "Corrida do Fogo - Ilhéus",
+    "date": "2017-07-08",
+    "year": 2017,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["7,3 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e por categoria.",
+    "results": [
+      {"distance": "7,3 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20170708_corrida-do-fogo-ilheus/20170708_corrida-do-fogo-ilheus_geral_7,3km_fem.pdf"},
+      {"distance": "7,3 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20170708_corrida-do-fogo-ilheus/20170708_corrida-do-fogo-ilheus_geral_7,3km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20170709_corrida-do-fogo-itabuna",
+    "name": "Corrida do Fogo - Itabuna",
+    "date": "2017-07-09",
+    "year": 2017,
+    "city": "Itabuna",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["9,6 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e por categoria.",
+    "results": [
+      {"distance": "9,6 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20170709_corrida-do-fogo-itabuna/20170709_corrida-do-fogo-itabuna_geral_9,6km_fem.pdf"},
+      {"distance": "9,6 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20170709_corrida-do-fogo-itabuna/20170709_corrida-do-fogo-itabuna_geral_9,6km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20170722_cacau-running-etapa-chocolate",
+    "name": "Cacau Running - Etapa Chocolate",
+    "date": "2017-07-22",
+    "year": 2017,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e por faixa etária.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20170722_cacau-running-etapa-chocolate/20170722_cacau-running_etapa-chocolate_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20170722_cacau-running-etapa-chocolate/20170722_cacau-running_etapa-chocolate_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20170722_cacau-running-etapa-chocolate/20170722_cacau-running_etapa-chocolate_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20170722_cacau-running-etapa-chocolate/20170722_cacau-running_etapa-chocolate_geral_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20171118_cacau-running-etapa-bataclan",
+    "name": "Cacau Running - Etapa Bataclan",
+    "date": "2017-11-18",
+    "year": 2017,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20171118_cacau-running-etapa-bataclan/20171118_cacau-running_etapa-bataclan_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20171118_cacau-running-etapa-bataclan/20171118_cacau-running_etapa-bataclan_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20171118_cacau-running-etapa-bataclan/20171118_cacau-running_etapa-bataclan_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20171118_cacau-running-etapa-bataclan/20171118_cacau-running_etapa-bataclan_geral_10km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20171216_vi-corrida-da-uesc",
+    "name": "VI Corrida da UESC",
+    "date": "2017-12-16",
+    "year": 2017,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km"],
+    "format": "PDF",
+    "note": "Resultados gerais.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20171216_vi-corrida-da-uesc/20171216_vi-corrida-da-uesc_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20171216_vi-corrida-da-uesc/20171216_vi-corrida-da-uesc_geral_5km_mas.pdf"}
+    ]
   }
 ]
