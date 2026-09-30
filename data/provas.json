@@ -306,5 +306,39 @@
       {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2017/20171216_vi-corrida-da-uesc/20171216_vi-corrida-da-uesc_geral_5km_fem.pdf"},
       {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2017/20171216_vi-corrida-da-uesc/20171216_vi-corrida-da-uesc_geral_5km_mas.pdf"}
     ]
+  },
+  {
+    "id": "20180304_desafio-coi-itapetinga",
+    "name": "Desafio COI Itapetinga",
+    "date": "2018-03-04",
+    "year": 2018,
+    "city": "Itapetinga",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["6 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e por faixa etária.",
+    "results": [
+      {"distance": "6 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2018/20180304_desafio-coi-itapetinga/20180304_desafio-coi-itapetinga_geral_6km_fem.pdf"},
+      {"distance": "6 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2018/20180304_desafio-coi-itapetinga/20180304_desafio-coi-itapetinga_geral_6km_mas.pdf"}
+    ]
+  },
+  {
+    "id": "20180630_cacau-night-run",
+    "name": "Cacau Night Run",
+    "date": "2018-06-30",
+    "year": 2018,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": ["5 km", "10 km"],
+    "format": "PDF",
+    "note": "Resultados gerais e por faixa etária.",
+    "results": [
+      {"distance": "5 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2018/20180630_cacau-night-run/20180630_cacau-night-run_geral_5km_fem.pdf"},
+      {"distance": "5 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2018/20180630_cacau-night-run/20180630_cacau-night-run_geral_5km_mas.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Feminino", "file": "resultados/2018/20180630_cacau-night-run/20180630_cacau-night-run_geral_10km_fem.pdf"},
+      {"distance": "10 km", "category": "Geral", "sex": "Masculino", "file": "resultados/2018/20180630_cacau-night-run/20180630_cacau-night-run_geral_10km_mas.pdf"}
+    ]
   }
 ]
