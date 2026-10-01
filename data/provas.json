@@ -1652,5 +1652,128 @@
         "file": "resultados/2023/20230115_virgulino-run/20230115_virgulino-run_cad_8km.pdf"
       }
     ]
+  },
+  {
+    "id": "20240829_corrida-do-centenario-de-una",
+    "name": "Corrida do Centenário de Una",
+    "date": "2024-08-25",
+    "year": 2024,
+    "city": "Una",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km",
+      "10 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e faixa etária.",
+    "results": [
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2024/20240829_corrida-do-centenario-de-una/20240825_corrida-do-centenario-de-una_geral_5km_fem.pdf"
+      },
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2024/20240829_corrida-do-centenario-de-una/20240825_corrida-do-centenario-de-una_geral_5km_mas.pdf"
+      },
+      {
+        "distance": "10 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2024/20240829_corrida-do-centenario-de-una/20240825_corrida-do-centenario-de-una_geral_10km_fem.pdf"
+      },
+      {
+        "distance": "10 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2024/20240829_corrida-do-centenario-de-una/20240825_corrida-do-centenario-de-una_geral_10km_mas.pdf"
+      }
+    ]
+  },
+  {
+    "id": "20251130_p7-running",
+    "name": "P7 Running",
+    "date": "2025-11-30",
+    "year": 2025,
+    "city": "Arraial D'Ajuda",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km",
+      "7 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e faixa etária.",
+    "results": [
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2025/20251130_p7-running/20251130_p7-running_geral_5km_fem.pdf"
+      },
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2025/20251130_p7-running/20251130_p7-running_geral_5km_mas.pdf"
+      },
+      {
+        "distance": "7 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2025/20251130_p7-running/20251130_p7-running_geral_7km_fem.pdf"
+      },
+      {
+        "distance": "7 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2025/20251130_p7-running/20251130_p7-running_geral_7km_mas.pdf"
+      }
+    ]
+  },
+  {
+    "id": "20251207_oab-conquista-run",
+    "name": "OAB Conquista Run",
+    "date": "2025-12-07",
+    "year": 2025,
+    "city": "Vitória da Conquista",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km",
+      "10 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e faixa etária.",
+    "results": [
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2025/20251207_oab-conquista-run/20251207_oab-conquista-run_geral_5km_fem.pdf"
+      },
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2025/20251207_oab-conquista-run/20251207_oab-conquista-run_geral_5km_mas.pdf"
+      },
+      {
+        "distance": "10 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2025/20251207_oab-conquista-run/20251207_oab-conquista-run_geral_10km_fem.pdf"
+      },
+      {
+        "distance": "10 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2025/20251207_oab-conquista-run/20251207_oab-conquista-run_geral_10km_mas.pdf"
+      }
+    ]
   }
 ]
