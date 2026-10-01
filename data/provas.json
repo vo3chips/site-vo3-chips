@@ -1618,5 +1618,39 @@
         "file": "resultados/2022/20221106_corrida-solidaria-fasa/20221106_RES_CORRIDA SOLIDARIA FASA_5KMAS.pdf"
       }
     ]
+  },
+  {
+    "id": "20230115_virgulino-run",
+    "name": "Virgulino Run",
+    "date": "2023-01-15",
+    "year": 2023,
+    "city": "Vitória da Conquista",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "8 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e faixa etária.",
+    "results": [
+      {
+        "distance": "8 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2023/20230115_virgulino-run/20230115_virgulino-run_geral_8km_fem.pdf"
+      },
+      {
+        "distance": "8 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2023/20230115_virgulino-run/20230115_virgulino-run_geral_8km_mas.pdf"
+      },
+      {
+        "distance": "8 km",
+        "category": "Cadeirante",
+        "sex": "",
+        "file": "resultados/2023/20230115_virgulino-run/20230115_virgulino-run_cad_8km.pdf"
+      }
+    ]
   }
 ]
