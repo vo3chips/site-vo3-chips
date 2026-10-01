@@ -19,7 +19,7 @@ function render() {
   const filtered = state.races.filter(race => {
     const resultTerms = (race.results || []).map(result => `${result.distance} ${result.category} ${result.sex}`).join(' ');
     const haystack = normalize(`${race.name} ${race.city} ${race.state} ${race.year} ${race.sport} ${resultTerms}`);
-    return (!term || haystack.includes(term)) && (!year || String(race.year) === year) && (!sport || race.sport === sport);
+    return (!term || haystack.includes(term)) && (!year || String(race.year) === year) && (!sport || (race.sports || [race.sport]).includes(sport));
   });
   const hasFilters = Boolean(term || year || sport);
   const visible = hasFilters || state.showAll ? filtered : filtered.slice(0, 3);
@@ -36,7 +36,7 @@ function render() {
       <h3>${race.name}</h3>
       <p class="race-location">${race.city} · ${race.state}${race.date ? ` · ${race.date.split('-').reverse().join('/')}` : ''}</p>
       <div class="race-tags"><span class="tag">${race.sport}</span><span class="tag">${race.format}</span></div>
-      ${(race.results || []).length === 1 ? `<a class="race-link" href="${race.results[0].file}" target="_blank" rel="noopener">${[race.results[0].distance, race.results[0].category, race.results[0].sex].filter(Boolean).join(' · ')} →</a>` : (race.results || []).length > 1 ? `<details class="race-results"><summary>Ver ${race.results.length} resultados</summary><div class="race-links">${race.results.map(result => `<a class="race-link" href="${result.file}" target="_blank" rel="noopener">${[result.distance, result.category, result.sex].filter(Boolean).join(' · ')} →</a>`).join('')}</div></details>` : race.file ? `<a class="race-link" href="${race.file}">${race.format === 'CSV' ? 'Consultar atletas →' : 'Abrir resultado →'}</a>` : '<span class="race-link" aria-disabled="true">Resultado em preparação</span>'}
+      ${(race.results || []).length === 1 ? `<a class="race-link" href="${race.results[0].file}" target="_blank" rel="noopener">${[race.results[0].sport, race.results[0].distance, race.results[0].category, race.results[0].sex].filter(Boolean).join(' · ')} →</a>` : (race.results || []).length > 1 ? `<details class="race-results"><summary>Ver ${race.results.length} resultados</summary><div class="race-links">${race.results.map(result => `<a class="race-link" href="${result.file}" target="_blank" rel="noopener">${[result.sport, result.distance, result.category, result.sex].filter(Boolean).join(' · ')} →</a>`).join('')}</div></details>` : race.file ? `<a class="race-link" href="${race.file}">${race.format === 'CSV' ? 'Consultar atletas →' : 'Abrir resultado →'}</a>` : '<span class="race-link" aria-disabled="true">Resultado em preparação</span>'}
     </article>`).join('');
 }
 
