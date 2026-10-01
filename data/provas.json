@@ -1293,5 +1293,330 @@
         "file": "resultados/2021/20211205_simulado-bahia-swimrun/20211205_simulado-bahia-swimrun_geral_8,4km_mas.pdf"
       }
     ]
+  },
+  {
+    "id": "20220116_virgulino-run",
+    "name": "Virgulino Run",
+    "date": "2022-01-16",
+    "year": 2022,
+    "city": "Vitória da Conquista",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "8,6 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e faixa etária.",
+    "results": [
+      {
+        "distance": "8,6 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220116_virgulino-run/20220116_virgulino-run_geral_8,6km_fem.pdf"
+      },
+      {
+        "distance": "8,6 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220116_virgulino-run/20220116_virgulino-run_geral_8,6km_mas.pdf"
+      },
+      {
+        "distance": "8,6 km",
+        "category": "Cadeirante",
+        "sex": "",
+        "file": "resultados/2022/20220116_virgulino-run/20220116_virgulino-run_cad_8,6km.pdf"
+      },
+      {
+        "distance": "8,6 km",
+        "category": "Prática Saudável",
+        "sex": "",
+        "file": "resultados/2022/20220116_virgulino-run/20220116_virgulino-run_ps_8,6km.pdf"
+      }
+    ]
+  },
+  {
+    "id": "20220320_corrida-nas-ruas-de-conquista",
+    "name": "Corrida Nas Ruas de Conquista",
+    "date": "2022-03-20",
+    "year": 2022,
+    "city": "Vitória da Conquista",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km",
+      "10 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e faixa etária.",
+    "results": [
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220320_corrida-nas-ruas-de-conquista/20220320_corrida-nas-ruas-de-conquista_geral_5km_fem.pdf"
+      },
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220320_corrida-nas-ruas-de-conquista/20220320_corrida-nas-ruas-de-conquista_geral_5km_mas.pdf"
+      },
+      {
+        "distance": "10 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220320_corrida-nas-ruas-de-conquista/20220320_corrida-nas-ruas-de-conquista_geral_10km_fem.pdf"
+      },
+      {
+        "distance": "10 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220320_corrida-nas-ruas-de-conquista/20220320_corrida-nas-ruas-de-conquista_geral_10km_mas.pdf"
+      },
+      {
+        "distance": "5km e 10 km",
+        "category": "PNE",
+        "sex": "",
+        "file": "resultados/2022/20220320_corrida-nas-ruas-de-conquista/20220320_corrida-nas-ruas-de-conquista_pne_5km_10km.pdf"
+      }
+    ]
+  },
+  {
+    "id": "20220820_adventure-race",
+    "name": "Adventure Race",
+    "date": "2022-08-20",
+    "year": 2022,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e faixa etária.",
+    "results": [
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220820_adventure-race/20220820_adventure-race_geral_5km_fem.pdf"
+      },
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220820_adventure-race/20220820_adventure-race_geral_5km_mas.pdf"
+      }
+    ]
+  },
+  {
+    "id": "20220821_campeonato-baiano-de-aquathlon-e-triathlon",
+    "name": "Campeonato Baiano de Aquathlon e Triathlon",
+    "date": "2022-08-21",
+    "year": 2022,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Aquathlon e Triathlon",
+    "distances": [
+      "6 km",
+      "Super Sprint",
+      "Sprint"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e categorias.",
+    "results": [
+      {
+        "distance": "6 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-aquathlon_6km_fem.pdf",
+        "sport": "Aquathlon"
+      },
+      {
+        "distance": "6 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-aquathlon_6km_mas.pdf",
+        "sport": "Aquathlon"
+      },
+      {
+        "distance": "Super Sprint",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_ssp_fem.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Super Sprint",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_ssp_mas.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Sprint",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_sp_geral_fem.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Sprint",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_sp_geral_mas.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Sprint",
+        "category": "Júnior",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_sp_jr_mas.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Sprint",
+        "category": "Pró",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_sp_pro_mas.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Sprint",
+        "category": "Sub-23",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_sp_sub23_mas.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Sprint",
+        "category": "Militar",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_sp_mil_mas.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Sprint",
+        "category": "MTB",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_sp_mtb_fem.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Sprint",
+        "category": "MTB",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_sp_mtb_mas.pdf",
+        "sport": "Triathlon"
+      },
+      {
+        "distance": "Sprint",
+        "category": "Paratriathlon",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220821_campeonato-baiano-de-aquathlon-e-triathlon/20220821_camp-baiano-triathlon_sp_para_mas.pdf",
+        "sport": "Triathlon"
+      }
+    ],
+    "sports": [
+      "Aquathlon",
+      "Triathlon"
+    ]
+  },
+  {
+    "id": "20220828_corrida-rustica-de-caraiva",
+    "name": "Corrida Rústica de Caraíva",
+    "date": "2022-08-28",
+    "year": 2022,
+    "city": "Caraíva",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km",
+      "12 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e categoria.",
+    "results": [
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220828_corrida-rustica-de-caraiva/20220828_corrida-rustica-de-caraiva_geral_5km_fem.pdf"
+      },
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220828_corrida-rustica-de-caraiva/20220828_corrida-rustica-de-caraiva_geral_5km_mas.pdf"
+      },
+      {
+        "distance": "12 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220828_corrida-rustica-de-caraiva/20220828_corrida-rustica-de-caraiva_geral_12km_fem.pdf"
+      },
+      {
+        "distance": "12 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220828_corrida-rustica-de-caraiva/20220828_corrida-rustica-de-caraiva_geral_12km_mas.pdf"
+      }
+    ]
+  },
+  {
+    "id": "20220904_desafio-vertical-conquista",
+    "name": "Desafio Vertical",
+    "date": "2022-09-04",
+    "year": 2022,
+    "city": "Vitória da Conquista",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "6 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e faixa etária.",
+    "results": [
+      {
+        "distance": "6 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20220904_desafio-vertical-conquista/20220904_desafio-vertical_geral_6km_fem.pdf"
+      },
+      {
+        "distance": "6 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20220904_desafio-vertical-conquista/20220904_desafio-vertical_geral_6km_mas.pdf"
+      }
+    ]
+  },
+  {
+    "id": "20221106_corrida-solidaria-fasa",
+    "name": "Corrida Solidária - FASA",
+    "date": "2022-11-06",
+    "year": 2022,
+    "city": "Vitória da Conquista",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral.",
+    "results": [
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2022/20221106_corrida-solidaria-fasa/20221106_RES_CORRIDA SOLIDARIA FASA_5KFEM.pdf"
+      },
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2022/20221106_corrida-solidaria-fasa/20221106_RES_CORRIDA SOLIDARIA FASA_5KMAS.pdf"
+      }
+    ]
   }
 ]
