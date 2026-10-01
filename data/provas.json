@@ -1171,5 +1171,127 @@
         "file": "resultados/2019/20191124_cacau-running-iii-etapa/20191124_cacau-running_iii-etapa_geral_10km_mas.pdf"
       }
     ]
+  },
+  {
+    "id": "20200307_bahia-swimrun",
+    "name": "Bahia SwimRun",
+    "date": "2020-03-07",
+    "year": 2020,
+    "city": "Barra Grande",
+    "state": "BA",
+    "sport": "Swimrun",
+    "distances": [
+      "10 km",
+      "19 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral.",
+    "results": [
+      {
+        "distance": "10 km",
+        "category": "Duplas",
+        "sex": "",
+        "file": "resultados/2020/20200307_bahia-swimrun/20200307_bahia-swimrun_duplas_10km.pdf"
+      },
+      {
+        "distance": "19 km",
+        "category": "Duplas",
+        "sex": "",
+        "file": "resultados/2020/20200307_bahia-swimrun/20200307_bahia-swimrun_duplas_19km.pdf"
+      },
+      {
+        "distance": "10 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2020/20200307_bahia-swimrun/20200307_bahia-swimrun_geral_10km_fem.pdf"
+      },
+      {
+        "distance": "10 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2020/20200307_bahia-swimrun/20200307_bahia-swimrun_geral_10km_mas.pdf"
+      },
+      {
+        "distance": "19 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2020/20200307_bahia-swimrun/20200307_bahia-swimrun_geral_19km_fem.pdf"
+      },
+      {
+        "distance": "19 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2020/20200307_bahia-swimrun/20200307_bahia-swimrun_geral_19km_mas.pdf"
+      }
+    ]
+  },
+  {
+    "id": "20210829_corrida-de-caraiva",
+    "name": "Corrida Rústica de Caraíva",
+    "date": "2021-08-29",
+    "year": 2021,
+    "city": "Caraíva",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km",
+      "12 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral e categoria.",
+    "results": [
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2021/20210829_corrida-de-caraiva/20210829_corrida-rustica-de-caraiva_geral_5km_fem.pdf"
+      },
+      {
+        "distance": "5 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2021/20210829_corrida-de-caraiva/20210829_corrida-rustica-de-caraiva_geral_5km_mas.pdf"
+      },
+      {
+        "distance": "12 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2021/20210829_corrida-de-caraiva/20210829_corrida-rustica-de-caraiva_geral_12km_fem.pdf"
+      },
+      {
+        "distance": "12 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2021/20210829_corrida-de-caraiva/20210829_corrida-rustica-de-caraiva_geral_12km_mas.pdf"
+      }
+    ]
+  },
+  {
+    "id": "20211205_simulado-bahia-swimrun",
+    "name": "Simulado Bahia SwimRun",
+    "date": "2021-12-05",
+    "year": 2021,
+    "city": "Ilhéus",
+    "state": "BA",
+    "sport": "Swimrun",
+    "distances": [
+      "8,4 km"
+    ],
+    "format": "PDF",
+    "note": "Resultado geral.",
+    "results": [
+      {
+        "distance": "8,4 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2021/20211205_simulado-bahia-swimrun/20211205_simulado-bahia-swimrun_geral_8,4km_fem.pdf"
+      },
+      {
+        "distance": "8,4 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2021/20211205_simulado-bahia-swimrun/20211205_simulado-bahia-swimrun_geral_8,4km_mas.pdf"
+      }
+    ]
   }
 ]
