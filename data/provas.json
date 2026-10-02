@@ -1775,5 +1775,57 @@
         "file": "resultados/2025/20251207_oab-conquista-run/20251207_oab-conquista-run_geral_10km_mas.pdf"
       }
     ]
+  },
+  {
+    "id": "20260322_2a-corrida-do-simtrans",
+    "name": "2ª Corrida do Simtrans",
+    "date": "2026-03-22",
+    "year": 2026,
+    "city": "Vitória da Conquista",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "6 km"
+    ],
+    "format": "CSV",
+    "note": "Resultado pesquisável e PDFs oficiais por categoria.",
+    "results": [
+      {
+        "distance": "6 km",
+        "category": "Geral",
+        "sex": "Feminino",
+        "file": "resultados/2026/2a-corrida-do-simtrans/resultados.csv"
+      },
+      {
+        "distance": "6 km",
+        "category": "Geral",
+        "sex": "Masculino",
+        "file": "resultados/2026/2a-corrida-do-simtrans/resultados.csv"
+      },
+      {
+        "distance": "6 km",
+        "category": "PCD",
+        "sex": "Feminino",
+        "file": "resultados/2026/2a-corrida-do-simtrans/resultados.csv"
+      },
+      {
+        "distance": "6 km",
+        "category": "PCD",
+        "sex": "Masculino",
+        "file": "resultados/2026/2a-corrida-do-simtrans/resultados.csv"
+      },
+      {
+        "distance": "6 km",
+        "category": "Servidor PMVC",
+        "sex": "Feminino",
+        "file": "resultados/2026/2a-corrida-do-simtrans/resultados.csv"
+      },
+      {
+        "distance": "6 km",
+        "category": "Servidor PMVC",
+        "sex": "Masculino",
+        "file": "resultados/2026/2a-corrida-do-simtrans/resultados.csv"
+      }
+    ]
   }
 ]
