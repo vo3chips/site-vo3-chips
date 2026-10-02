@@ -134,7 +134,7 @@ function render() {
   el.showMore.setAttribute('aria-expanded', String(state.showAll));
   el.list.innerHTML = visible.map(race => {
     const results = race.results || [];
-    const linkFor = (result, index) => '<a class="race-link ' + (result.file.toLowerCase().endsWith('.csv') ? 'csv-result' : '') + '" href="' + result.file + '" data-index="' + index + '" target="_blank" rel="noopener">' + (result.file.toLowerCase().endsWith('.csv') ? 'Consultar resultado' : 'Baixar PDF') + ' · ' + [result.sport, result.distance, result.category, result.sex].filter(Boolean).join(' · ') + ' →</a>';
+    const linkFor = (result, index) => '<a class="race-link ' + (result.file.toLowerCase().endsWith('.csv') ? 'csv-result' : '') + '" href="' + result.file + '" data-index="' + index + '" target="_blank" rel="noopener">' + (result.file.toLowerCase().endsWith('.csv') ? 'Consultar resultado' : '') + ' · ' + [result.sport, result.distance, result.category, result.sex].filter(Boolean).join(' · ') + ' →</a>';
     let action = '<span class="race-link">Resultado em preparação</span>';
     if (results.length === 1) action = linkFor(results[0], 0);
     else if (results.length > 1) action = '<details class="race-results"><summary>Ver ' + results.length + ' resultados</summary><div class="race-links">' + results.map(linkFor).join('') + '</div></details>';
