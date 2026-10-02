@@ -11,15 +11,15 @@ const el = {
   showMore: document.querySelector('#show-more-results')
 };
 
-const normalize = value => String(value ?? '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
+const normalize = value => String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
 function escapeHTML(value) {
   return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
 }
 
 function parseCSV(text) {
-  text = text.replace(/^\\uFEFF/, '');
-  const first = text.split(/\\r?\\n/, 1)[0];
+  text = text.replace(/^\uFEFF/, '');
+  const first = text.split(/\r?\n/, 1)[0];
   const delimiter = (first.match(/;/g) || []).length >= (first.match(/,/g) || []).length ? ';' : ',';
   const rows = []; let row = []; let field = ''; let quoted = false;
   for (let i = 0; i < text.length; i++) {
@@ -27,8 +27,8 @@ function parseCSV(text) {
     if (c === '"') {
       if (quoted && text[i + 1] === '"') { field += '"'; i++; } else quoted = !quoted;
     } else if (c === delimiter && !quoted) { row.push(field); field = ''; }
-    else if ((c === '\\n' || c === '\\r') && !quoted) {
-      if (c === '\\r' && text[i + 1] === '\\n') i++;
+    else if ((c === '\n' || c === '\r') && !quoted) {
+      if (c === '\r' && text[i + 1] === '\n') i++;
       row.push(field); if (row.some(v => v.trim())) rows.push(row);
       row = []; field = '';
     } else field += c;
@@ -41,7 +41,7 @@ function ensureViewerStyles() {
   if (document.querySelector('#csv-viewer-styles')) return;
   const style = document.createElement('style');
   style.id = 'csv-viewer-styles';
-  style.textContent = \`
+  style.textContent = `
     .csv-viewer{position:fixed;inset:0;z-index:1000;background:rgba(10,15,16,.82);display:flex;align-items:center;justify-content:center;padding:20px}
     .csv-panel{background:#fff;color:#161b1d;width:min(1180px,100%);max-height:92vh;overflow:auto;border-radius:10px;padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.35)}
     .csv-panel h2{margin:4px 0 20px;font-size:clamp(24px,3vw,40px)}
@@ -61,7 +61,7 @@ function ensureViewerStyles() {
     .csv-pdf-link{display:inline-block;border:1px solid #738184;border-radius:5px;padding:10px 12px;color:#111;text-decoration:none;background:#f4f7f7;font-weight:700}
     .csv-pdf-link:hover{background:#dff000}
     @media(max-width:650px){.csv-panel{padding:18px}.csv-search-box{display:block}.csv-search-box label{margin-bottom:12px}}
-  \`;
+  `;
   document.head.append(style);
 }
 
@@ -71,17 +71,17 @@ function openCSVResult(race, result) {
   const overlay = document.createElement('div');
   overlay.id = 'csv-viewer';
   overlay.className = 'csv-viewer';
-  overlay.innerHTML = \`
+  overlay.innerHTML = `
     <section class="csv-panel" role="dialog" aria-modal="true" aria-label="Consulta de resultados">
       <button class="csv-close" type="button" aria-label="Fechar">×</button>
       <p class="eyebrow dark">RESULTADO PESQUISÁVEL</p>
-      <h2>\${escapeHTML(race.name)}</h2>
+      <h2>${escapeHTML(race.name)}</h2>
       <p>Pesquise pelo número, nome do atleta ou equipe.</p>
       <div class="csv-search-box"><label>Buscar resultado<input class="csv-search" type="search" placeholder="Digite número, nome ou equipe" aria-label="Buscar por número, nome ou equipe"></label></div>
       <p class="csv-count">Carregando resultados…</p>
       <div class="csv-table-wrap"><table class="csv-table"><thead></thead><tbody></tbody></table></div>
       <div class="csv-pdfs"><h3>PDFs oficiais da prova</h3><div class="csv-pdf-list"></div></div>
-    </section>\`;
+    </section>`;
   document.body.append(overlay);
   const close = () => overlay.remove();
   overlay.querySelector('.csv-close').addEventListener('click', close);
@@ -112,21 +112,21 @@ function render() {
   const year = el.year.value;
   const sport = el.sport.value;
   const filtered = state.races.filter(race => {
-    const resultTerms = (race.results || []).map(result => \`${result.distance} ${result.category} ${result.sex}\`).join(' ');
-    const haystack = normalize(\`${race.name} ${race.city} ${race.state} ${race.year} ${race.sport} ${resultTerms}\`);
+    const resultTerms = (race.results || []).map(result => `${result.distance} ${result.category} ${result.sex}`).join(' ');
+    const haystack = normalize(`${race.name} ${race.city} ${race.state} ${race.year} ${race.sport} ${resultTerms}`);
     return (!term || haystack.includes(term)) && (!year || String(race.year) === year) && (!sport || (race.sports || [race.sport]).includes(sport));
   });
   const hasFilters = Boolean(term || year || sport);
   const visible = hasFilters || state.showAll ? filtered : filtered.slice(0, 3);
-  el.count.textContent = hasFilters ? \`${filtered.length} ${filtered.length === 1 ? 'prova encontrada' : 'provas encontradas'}\` : \`Exibindo ${visible.length} de ${filtered.length} provas\`;
+  el.count.textContent = hasFilters ? `${filtered.length} ${filtered.length === 1 ? 'prova encontrada' : 'provas encontradas'}` : `Exibindo ${visible.length} de ${filtered.length} provas`;
   el.empty.hidden = filtered.length > 0;
   el.showMore.hidden = hasFilters || filtered.length <= 3;
   el.showMore.textContent = state.showAll ? 'Ver menos resultados' : 'Ver mais resultados';
   el.showMore.setAttribute('aria-expanded', String(state.showAll));
   el.list.innerHTML = visible.map(race => {
     const result = (race.results || [])[0];
-    const action = result ? \`<a class="race-link ${result.file.toLowerCase().endsWith('.csv') ? 'csv-result' : ''}" href="${result.file}" target="_blank" rel="noopener">${result.file.toLowerCase().endsWith('.csv') ? 'Consultar resultado →' : 'Abrir resultado →'}</a>\` : '<span class="race-link">Resultado em preparação</span>';
-    return \`<article class="race-card" data-format="${escapeHTML(race.format)}"><span class="race-year">${escapeHTML(race.year)}</span><h3>${escapeHTML(race.name)}</h3><p class="race-location">${escapeHTML(race.city)} · ${escapeHTML(race.state)}${race.date ? ' · ' + race.date.split('-').reverse().join('/') : ''}</p><div class="race-tags"><span class="tag">${escapeHTML(race.sport)}</span><span class="tag">${escapeHTML(race.format)}</span></div>${action}</article>\`;
+    const action = result ? `<a class="race-link ${result.file.toLowerCase().endsWith('.csv') ? 'csv-result' : ''}" href="${result.file}" target="_blank" rel="noopener">${result.file.toLowerCase().endsWith('.csv') ? 'Consultar resultado →' : 'Abrir resultado →'}</a>` : '<span class="race-link">Resultado em preparação</span>';
+    return `<article class="race-card" data-format="${escapeHTML(race.format)}"><span class="race-year">${escapeHTML(race.year)}</span><h3>${escapeHTML(race.name)}</h3><p class="race-location">${escapeHTML(race.city)} · ${escapeHTML(race.state)}${race.date ? ' · ' + race.date.split('-').reverse().join('/') : ''}</p><div class="race-tags"><span class="tag">${escapeHTML(race.sport)}</span><span class="tag">${escapeHTML(race.format)}</span></div>${action}</article>`;
   }).join('');
   el.list.querySelectorAll('a.csv-result').forEach(link => link.addEventListener('click', event => { event.preventDefault(); const race = state.races.find(r => r.name === link.closest('.race-card').querySelector('h3').textContent); const result = race.results[0]; openCSVResult(race, result); }));
 }
