@@ -79,7 +79,7 @@ function openCSVResult(race, result) {
       <p>Pesquise pelo número, nome do atleta ou equipe.</p>
       <div class="csv-search-box"><label>Buscar resultado<input class="csv-search" type="search" placeholder="Digite número, nome ou equipe" aria-label="Buscar por número, nome ou equipe"></label></div>
       <p class="csv-count">Carregando resultados…</p>
-      <div class="csv-table-wrap"><table class="csv-table"><thead></thead><tbody></tbody></table></div>
+      <div class="csv-table-wrap"><table class="csv-table"><colgroup><col style="width:2.5%"><col style="width:3%"><col style="width:28%"><col style="width:6%"><col style="width:7%"><col style="width:7%"><col style="width:7%"><col style="width:7%"><col style="width:25%"><col style="width:5%"><col style="width:8%"></colgroup><thead></thead><tbody></tbody></table></div>
       <div class="csv-pdfs"><h3>PDFs oficiais da prova</h3><div class="csv-pdf-list"></div></div>
     </section>`;
   document.body.append(overlay);
