@@ -1,0 +1,10 @@
+[
+  {
+    "nome": "2ª Corrida do Simtrans",
+    "data": "2026-03-22",
+    "cidade": "Vitória da Conquista - BA",
+    "modalidade": "Corrida · 6 km",
+    "formato": "csv",
+    "arquivo": "./resultados/2026/2a-corrida-do-simtrans/resultados.csv"
+  }
+]
