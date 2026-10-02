@@ -51,7 +51,7 @@ function ensureViewerStyles() {
     .csv-search-box input{display:block;width:100%;box-sizing:border-box;margin-top:7px;padding:13px 14px;border:2px solid #9aa5a8;border-radius:6px;font-size:16px}
     .csv-count{font-weight:700;margin:10px 0}
     .csv-table-wrap{overflow:auto;border:1px solid #9aa5a8}
-    .csv-table{border-collapse:collapse;width:100%;min-width:900px;font-size:14px}
+    .csv-table{border-collapse:collapse;width:100%;min-width:900px;font-size:12px}.csv-table th:nth-child(3),.csv-table td:nth-child(3){width:24%;max-width:280px;white-space:normal;overflow-wrap:anywhere}.csv-table th:nth-child(8),.csv-table td:nth-child(8){width:16%;max-width:190px;white-space:normal;overflow-wrap:anywhere}
     .csv-table th,.csv-table td{border:1px solid #b7c0c2;padding:9px 10px;text-align:left;white-space:nowrap;vertical-align:middle}
     .csv-table th{background:#e9eff0;color:#111;font-weight:800;position:sticky;top:0;z-index:1}
     .csv-table tr:nth-child(even){background:#f7f9f9}
@@ -94,13 +94,22 @@ function openCSVResult(race, result) {
   });
   fetch(result.file).then(response => { if (!response.ok) throw Error(); return response.text(); }).then(text => {
     const data = parseCSV(text);
-    overlay.querySelector('thead').innerHTML = '<tr>' + data.headers.map(h => '<th>' + escapeHTML(h) + '</th>').join('') + '</tr>';
+    const labels = { 'Colocação':'COL', 'Número':'Nº', 'Atleta':'ATLETA', 'Sexo':'SEXO', 'Categoria':'CAT', 'Faixa etária':'F. ETÁRIA', 'Categoria faixa':'COL FAIXA', 'Equipe':'EQUIPE', 'Ritmo':'RITMO', 'Tempo':'TEMPO' };
+    const displayHeaders = data.headers.map(h => labels[h] || h);
+    const modalityIndex = data.headers.findIndex(h => /modalidade|distancia|distância/i.test(h));
+    const distance = result.distance || (race.distances && race.distances[0]) || '';
+    if (modalityIndex < 0) { const catPos = displayHeaders.findIndex(h => h === 'CAT'); displayHeaders.splice(catPos < 0 ? 0 : catPos, 0, 'MOD'); }
+    overlay.querySelector('thead').innerHTML = '<tr>' + displayHeaders.map(h => '<th>' + escapeHTML(h) + '</th>').join('') + '</tr>';
     const search = overlay.querySelector('.csv-search');
     const searchable = data.headers.map((h, i) => ({h: normalize(h), i})).filter(x => /numero|atleta|nome|equipe/.test(x.h)).map(x => x.i);
     const update = () => {
       const term = normalize(search.value.trim());
       const rows = data.rows.filter(row => !term || searchable.some(i => normalize(row[i]).includes(term)));
-      overlay.querySelector('tbody').innerHTML = rows.slice(0, 500).map(row => '<tr>' + data.headers.map((_, i) => '<td>' + escapeHTML(row[i]) + '</td>').join('') + '</tr>').join('');
+      overlay.querySelector('tbody').innerHTML = rows.slice(0, 500).map(row => {
+        const values = data.headers.map((_, i) => row[i]);
+        if (modalityIndex < 0) { const catPos = data.headers.findIndex(h => /categoria/i.test(h)); values.splice(catPos < 0 ? 0 : catPos, 0, distance); }
+        return '<tr>' + values.map(v => '<td>' + escapeHTML(v) + '</td>').join('') + '</tr>';
+      }).join('');
       overlay.querySelector('.csv-count').textContent = rows.length + (rows.length === 1 ? ' resultado encontrado' : ' resultados encontrados');
     };
     search.addEventListener('input', update); update(); search.focus();
