@@ -1823,5 +1823,104 @@
         "resultados/2026/2a-corrida-do-simtrans/20260322_2a-corrida-do-simtrans_serv_6km_mas.pdf"
       ]
     ]
+  },
+  {
+    "id": "20260419_meia-maratona-goldvitam",
+    "name": "Meia-maratona Goldvitam",
+    "date": "2026-04-19",
+    "year": 2026,
+    "city": "Vitória da Conquista",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km",
+      "10 km",
+      "21 km"
+    ],
+    "format": "CSV",
+    "note": "Resultado pesquisável com PDFs oficiais por distância e sexo.",
+    "results": [
+      {
+        "distance": "5 km / 10 km / 21 km",
+        "category": "Resultado pesquisável",
+        "sex": "",
+        "file": "resultados/2026/meia-maratona-goldvitam/resultados.csv"
+      }
+    ],
+    "pdfs": [
+      [
+        "5 km · Feminino",
+        "resultados/2026/meia-maratona-goldvitam/20260419_meia-maratona-goldvitam_geral_5km_fem.pdf"
+      ],
+      [
+        "5 km · Masculino",
+        "resultados/2026/meia-maratona-goldvitam/20260419_meia-maratona-goldvitam_geral_5km_mas.pdf"
+      ],
+      [
+        "10 km · Feminino",
+        "resultados/2026/meia-maratona-goldvitam/20260419_meia-maratona-goldvitam_geral_10km_fem.pdf"
+      ],
+      [
+        "10 km · Masculino",
+        "resultados/2026/meia-maratona-goldvitam/20260419_meia-maratona-goldvitam_geral_10km_mas.pdf"
+      ],
+      [
+        "21 km · Feminino",
+        "resultados/2026/meia-maratona-goldvitam/20260419_meia-maratona-goldvitam_geral_21km_fem.pdf"
+      ],
+      [
+        "21 km · Masculino",
+        "resultados/2026/meia-maratona-goldvitam/20260419_meia-maratona-goldvitam_geral_21km_mas.pdf"
+      ]
+    ]
+  },
+  {
+    "id": "20260926_franciscan-run",
+    "name": "Franciscan Run",
+    "date": "2026-09-26",
+    "year": 2026,
+    "city": "Vitória da Conquista",
+    "state": "BA",
+    "sport": "Corrida",
+    "distances": [
+      "5 km",
+      "10 km"
+    ],
+    "format": "CSV",
+    "note": "Resultado pesquisável com resultados gerais e PCD.",
+    "results": [
+      {
+        "distance": "5 km / 10 km",
+        "category": "Resultado pesquisável",
+        "sex": "",
+        "file": "resultados/2026/franciscan-run/resultados.csv"
+      }
+    ],
+    "pdfs": [
+      [
+        "5 km · Geral · Feminino",
+        "resultados/2026/franciscan-run/20260926_franciscan-run_geral_5km_fem.pdf"
+      ],
+      [
+        "5 km · Geral · Masculino",
+        "resultados/2026/franciscan-run/20260926_franciscan-run_geral_5km_mas.pdf"
+      ],
+      [
+        "10 km · Geral · Feminino",
+        "resultados/2026/franciscan-run/20260926_franciscan-run_geral_10km_fem.pdf"
+      ],
+      [
+        "10 km · Geral · Masculino",
+        "resultados/2026/franciscan-run/20260926_franciscan-run_geral_10km_mas.pdf"
+      ],
+      [
+        "5 km · PCD · Feminino",
+        "resultados/2026/franciscan-run/20260926_franciscan-run_pcd_5km_fem.pdf"
+      ],
+      [
+        "5 km · PCD · Masculino",
+        "resultados/2026/franciscan-run/20260926_franciscan-run_pcd_5km_mas.pdf"
+      ]
+    ]
   }
 ]
