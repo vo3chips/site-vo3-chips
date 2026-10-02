@@ -30,13 +30,13 @@ function parseCSV(text) {
 function openCSVResult(url, title) {
   const existing = document.querySelector('#csv-viewer'); if (existing) existing.remove();
   const overlay = document.createElement('div'); overlay.id = 'csv-viewer'; overlay.className = 'csv-viewer';
-  overlay.innerHTML = \`
+  overlay.innerHTML = `
     <div class="csv-panel" role="dialog" aria-modal="true" aria-label="Consulta de resultados">
       <button class="csv-close" type="button" aria-label="Fechar">×</button>
-      <p class="eyebrow dark">RESULTADO PESQUISÁVEL</p><h2>\${title}</h2>
+      <p class="eyebrow dark">RESULTADO PESQUISÁVEL</p><h2>${title}</h2>
       <div class="csv-tools"><input class="csv-search" type="search" placeholder="Buscar por nome ou número" aria-label="Buscar por nome ou número"><select class="csv-category" aria-label="Filtrar por categoria"><option value="">Todas as categorias</option></select></div>
       <p class="csv-count">Carregando resultados…</p><div class="csv-table-wrap"><table><thead></thead><tbody></tbody></table></div>
-    </div>\`;
+    </div>`;
   document.body.append(overlay);
   const close = () => overlay.remove(); overlay.querySelector('.csv-close').addEventListener('click', close); overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
   fetch(url).then(r => { if (!r.ok) throw Error(); return r.text(); }).then(text => {
