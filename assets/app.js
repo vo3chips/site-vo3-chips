@@ -51,7 +51,7 @@ function ensureViewerStyles() {
     .csv-search-box input{display:block;width:100%;box-sizing:border-box;margin-top:7px;padding:13px 14px;border:2px solid #9aa5a8;border-radius:6px;font-size:16px}
     .csv-count{font-weight:700;margin:10px 0}
     .csv-table-wrap{overflow:auto;border:1px solid #9aa5a8}
-    .csv-table{border-collapse:collapse;width:100%;min-width:900px;font-size:12px;table-layout:fixed}.csv-table th:nth-child(3),.csv-table td:nth-child(3){width:24%;max-width:280px;white-space:normal;word-break:normal;overflow-wrap:break-word}.csv-table th:nth-child(8),.csv-table td:nth-child(8){width:16%;max-width:190px;white-space:normal;overflow-wrap:anywhere}
+    .csv-table{border-collapse:collapse;width:100%;min-width:900px;font-size:11px;table-layout:fixed}.csv-table th:nth-child(3),.csv-table td:nth-child(3){width:24%;max-width:280px;white-space:normal;word-break:normal;overflow-wrap:break-word}.csv-table th:nth-child(8),.csv-table td:nth-child(8){width:16%;max-width:190px;white-space:normal;overflow-wrap:anywhere}
     .csv-table th,.csv-table td{border:1px solid #b7c0c2;padding:9px 10px;text-align:left;white-space:nowrap;vertical-align:middle}
     .csv-table th{background:#e9eff0;color:#111;font-weight:800;position:sticky;top:0;z-index:1}
     .csv-table tr:nth-child(even){background:#f7f9f9}
