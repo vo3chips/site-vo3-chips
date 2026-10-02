@@ -90,7 +90,7 @@ function openCSVResult(race, result) {
   (race.pdfs || []).forEach(([label, file]) => {
     const link = document.createElement('a');
     link.className = 'csv-pdf-link'; link.href = file; link.target = '_blank'; link.rel = 'noopener';
-    link.textContent = 'Baixar PDF · ' + label; pdfList.append(link);
+    link.textContent = ' · ' + label; pdfList.append(link);
   });
   fetch(result.file).then(response => { if (!response.ok) throw Error(); return response.text(); }).then(text => {
     const data = parseCSV(text);
