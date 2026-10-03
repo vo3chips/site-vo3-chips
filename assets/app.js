@@ -97,7 +97,7 @@ function openCSVResult(race, result) {
     const labels = { 'mod':'MOD', 'sexo':'SEXO', 'col':'COL', 'colocacao':'COL', 'num':'Nº', 'numero':'Nº', 'nº':'Nº', 'atleta':'ATLETA', 'nome':'ATLETA', 'f etaria':'F. ETÁRIA', 'faixa etaria':'F. ETÁRIA', 'c fx':'COL FAIXA', 'categoria faixa':'COL FAIXA', 'col faixa':'COL FAIXA', 'cat':'CAT', 'categoria':'CAT', 'c cat':'COL CAT', 'col cat':'COL CAT', 'equipe':'EQUIPE', 'cidade':'CIDADE', 'ritmo':'RITMO', 'pace':'RITMO', 'tempo':'TEMPO', 't liquido':'T. LÍQUIDO', 't. liquido':'T. LÍQUIDO' };
     const displayHeaders = data.headers.map(h => labels[normalize(h)] || h);
     const columnClasses = displayHeaders.map(h => /atleta|nome/i.test(h) ? 'csv-col-athlete' : /equipe/i.test(h) ? 'csv-col-team' : '');
-    const modalityIndex = data.headers.findIndex(h => /modalidade|distancia|distância/i.test(h));
+    const modalityIndex = data.headers.findIndex(h => /^(mod|modalidade|distancia)$/.test(normalize(h)));
     const distance = result.distance || (race.distances && race.distances[0]) || '';
     if (modalityIndex < 0) { const catPos = displayHeaders.findIndex(h => h === 'CAT'); displayHeaders.splice(catPos < 0 ? 0 : catPos, 0, 'MOD'); }
     overlay.querySelector('thead').innerHTML = '<tr>' + displayHeaders.map((h, i) => '<th class="' + columnClasses[i] + '">' + escapeHTML(h) + '</th>').join('') + '</tr>';
