@@ -113,7 +113,7 @@ function openCSVResult(race, result) {
     if (modalityIndex < 0) { const catPos = displayHeaders.findIndex(h => h === 'CAT'); const insertAt = catPos < 0 ? 0 : catPos; displayHeaders.splice(insertAt, 0, 'MOD'); columnClasses.splice(insertAt, 0, ''); }
     overlay.querySelector('thead').innerHTML = '<tr>' + displayHeaders.map((h, i) => '<th class="' + columnClasses[i] + '">' + escapeHTML(h) + '</th>').join('') + '</tr>';
     const search = overlay.querySelector('.csv-search');
-    const searchable = data.headers.map((h, i) => ({h: normalize(h), i})).filter(x => /^(num|numero|nº|no|atleta|nome|equipe|mod|modalidade|distancia|sexo|f etaria|faixa etaria|cat|categoria|cidade)$/.test(x.h)).map(x => x.i);
+    const searchable = data.headers.map((h, i) => ({h: normalize(h), i})).filter(x => /^(num|numero|nº|no|atleta|nome|equipe|mod|modalidade|distancia|sexo|f etaria|f\\. etaria|faixa etaria|cat|categoria|cidade)$/.test(x.h)).map(x => x.i);
     const numberColumn = data.headers.findIndex(h => /^(num|numero|nº|no)$/.test(normalize(h)));
     const pagination = overlay.querySelector('.csv-pagination');
     const previous = overlay.querySelector('.csv-page-prev');
