@@ -81,8 +81,8 @@ function openCSVResult(race, result) {
       <button class="csv-close" type="button" aria-label="Fechar">×</button>
       <p class="eyebrow dark">RESULTADO PESQUISÁVEL</p>
       <h2>${escapeHTML(race.name)}</h2>
-      <p>Pesquise pelo número, nome do atleta ou equipe.</p>
-      <div class="csv-search-box"><label>Buscar resultado<input class="csv-search" type="search" placeholder="Digite número, nome ou equipe" aria-label="Buscar por número, nome ou equipe"></label></div>
+      <p>Pesquise por número, atleta, equipe, modalidade, sexo, faixa etária, categoria ou cidade.</p>
+      <div class="csv-search-box"><label>Buscar resultado<input class="csv-search" type="search" placeholder="Digite qualquer informação do resultado" aria-label="Buscar por número, atleta, equipe, modalidade, sexo, faixa etária, categoria ou cidade"></label></div>
       <p class="csv-count">Carregando resultados…</p>
       <div class="csv-table-wrap"><table class="csv-table"><thead></thead><tbody></tbody></table></div>
       <div class="csv-mobile-results" aria-label="Resultados"></div>
@@ -113,7 +113,7 @@ function openCSVResult(race, result) {
     if (modalityIndex < 0) { const catPos = displayHeaders.findIndex(h => h === 'CAT'); const insertAt = catPos < 0 ? 0 : catPos; displayHeaders.splice(insertAt, 0, 'MOD'); columnClasses.splice(insertAt, 0, ''); }
     overlay.querySelector('thead').innerHTML = '<tr>' + displayHeaders.map((h, i) => '<th class="' + columnClasses[i] + '">' + escapeHTML(h) + '</th>').join('') + '</tr>';
     const search = overlay.querySelector('.csv-search');
-    const searchable = data.headers.map((h, i) => ({h: normalize(h), i})).filter(x => /^(num|numero|nº|no)$|atleta|nome|equipe/.test(x.h)).map(x => x.i);
+    const searchable = data.headers.map((h, i) => ({h: normalize(h), i})).filter(x => /^(num|numero|nº|no|atleta|nome|equipe|mod|modalidade|distancia|sexo|f etaria|faixa etaria|cat|categoria|cidade)$/.test(x.h)).map(x => x.i);
     const numberColumn = data.headers.findIndex(h => /^(num|numero|nº|no)$/.test(normalize(h)));
     const pagination = overlay.querySelector('.csv-pagination');
     const previous = overlay.querySelector('.csv-page-prev');
