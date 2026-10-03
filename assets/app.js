@@ -103,9 +103,11 @@ function openCSVResult(race, result) {
     overlay.querySelector('thead').innerHTML = '<tr>' + displayHeaders.map((h, i) => '<th class="' + columnClasses[i] + '">' + escapeHTML(h) + '</th>').join('') + '</tr>';
     const search = overlay.querySelector('.csv-search');
     const searchable = data.headers.map((h, i) => ({h: normalize(h), i})).filter(x => /^(num|numero|nº|no)$|atleta|nome|equipe/.test(x.h)).map(x => x.i);
+    const numberColumn = data.headers.findIndex(h => /^(num|numero|nº|no)$/.test(normalize(h)));
     const update = () => {
       const term = normalize(search.value.trim());
-      const rows = data.rows.filter(row => !term || searchable.some(i => normalize(row[i]).includes(term)));
+      const exactNumber = /^\d+$/.test(term);
+      const rows = data.rows.filter(row => !term || (exactNumber && numberColumn >= 0 ? normalize(row[numberColumn]).trim() === term : searchable.some(i => normalize(row[i]).includes(term))));
       overlay.querySelector('tbody').innerHTML = rows.slice(0, 500).map(row => {
         const values = data.headers.map((_, i) => row[i]);
         if (modalityIndex < 0) { const catPos = data.headers.findIndex(h => /categoria/i.test(h)); values.splice(catPos < 0 ? 0 : catPos, 0, distance); }
