@@ -55,12 +55,17 @@ function ensureViewerStyles() {
     .csv-table th,.csv-table td{border:1px solid #b7c0c2;padding:9px 4px;text-align:left;white-space:nowrap;vertical-align:middle}
     .csv-table th{background:#e9eff0;color:#111;font-weight:800;position:sticky;top:0;z-index:1}
     .csv-table tr:nth-child(even){background:#f7f9f9}
+    .csv-mobile-results{display:none}
+    .csv-pagination{display:flex;justify-content:center;align-items:center;gap:14px;margin:16px 0 4px}
+    .csv-page-button{min-width:100px;border:1px solid #596568;border-radius:5px;padding:10px 14px;background:#161b1d;color:#fff;font-weight:700;cursor:pointer}
+    .csv-page-button:disabled{opacity:.38;cursor:not-allowed}
+    .csv-page-status{font-weight:700;text-align:center}
     .csv-pdfs{margin-top:26px;border-top:2px solid #dce3e4;padding-top:18px}
     .csv-pdfs h3{margin:0 0 12px;font-size:20px}
     .csv-pdf-list{display:flex;flex-wrap:wrap;gap:10px}
     .csv-pdf-link{display:inline-block;border:1px solid #738184;border-radius:5px;padding:10px 12px;color:#111;text-decoration:none;background:#f4f7f7;font-weight:700}
     .csv-pdf-link:hover{background:#dff000}
-    @media(max-width:650px){.csv-viewer{padding:6px}.csv-panel{width:calc(100vw - 12px);max-height:calc(100vh - 12px);padding:16px}.csv-search-box{display:block}.csv-search-box label{margin-bottom:12px}.csv-table .csv-col-athlete{min-width:190px}.csv-table .csv-col-team{min-width:170px}}
+    @media(max-width:650px){.csv-viewer{padding:6px}.csv-panel{width:calc(100vw - 12px);max-height:calc(100vh - 12px);padding:16px}.csv-panel h2{font-size:28px}.csv-search-box{display:block}.csv-search-box label{margin-bottom:12px}.csv-table-wrap{display:none}.csv-mobile-results{display:grid;gap:12px}.csv-mobile-card{border:1px solid #9aa5a8;border-radius:7px;background:#fff;overflow:hidden}.csv-mobile-row{display:grid;grid-template-columns:minmax(92px,38%) minmax(0,1fr);border-bottom:1px solid #d7ddde}.csv-mobile-row:last-child{border-bottom:0}.csv-mobile-label{padding:8px;background:#e9eff0;font-size:12px;font-weight:800}.csv-mobile-value{padding:8px;font-size:13px;overflow-wrap:anywhere}.csv-pagination{gap:8px}.csv-page-button{min-width:82px;padding:11px 9px}.csv-page-status{font-size:13px}}
   `;
   document.head.append(style);
 }
@@ -80,6 +85,12 @@ function openCSVResult(race, result) {
       <div class="csv-search-box"><label>Buscar resultado<input class="csv-search" type="search" placeholder="Digite número, nome ou equipe" aria-label="Buscar por número, nome ou equipe"></label></div>
       <p class="csv-count">Carregando resultados…</p>
       <div class="csv-table-wrap"><table class="csv-table"><thead></thead><tbody></tbody></table></div>
+      <div class="csv-mobile-results" aria-label="Resultados"></div>
+      <nav class="csv-pagination" aria-label="Paginação dos resultados">
+        <button class="csv-page-button csv-page-prev" type="button">Anterior</button>
+        <span class="csv-page-status" aria-live="polite"></span>
+        <button class="csv-page-button csv-page-next" type="button">Próxima</button>
+      </nav>
       <div class="csv-pdfs"><h3>PDFs oficiais da prova</h3><div class="csv-pdf-list"></div></div>
     </section>`;
   document.body.append(overlay);
@@ -99,23 +110,54 @@ function openCSVResult(race, result) {
     const columnClasses = displayHeaders.map(h => /atleta|nome/i.test(h) ? 'csv-col-athlete' : /equipe/i.test(h) ? 'csv-col-team' : '');
     const modalityIndex = data.headers.findIndex(h => /^(mod|modalidade|distancia)$/.test(normalize(h)));
     const distance = result.distance || (race.distances && race.distances[0]) || '';
-    if (modalityIndex < 0) { const catPos = displayHeaders.findIndex(h => h === 'CAT'); displayHeaders.splice(catPos < 0 ? 0 : catPos, 0, 'MOD'); }
+    if (modalityIndex < 0) { const catPos = displayHeaders.findIndex(h => h === 'CAT'); const insertAt = catPos < 0 ? 0 : catPos; displayHeaders.splice(insertAt, 0, 'MOD'); columnClasses.splice(insertAt, 0, ''); }
     overlay.querySelector('thead').innerHTML = '<tr>' + displayHeaders.map((h, i) => '<th class="' + columnClasses[i] + '">' + escapeHTML(h) + '</th>').join('') + '</tr>';
     const search = overlay.querySelector('.csv-search');
     const searchable = data.headers.map((h, i) => ({h: normalize(h), i})).filter(x => /^(num|numero|nº|no)$|atleta|nome|equipe/.test(x.h)).map(x => x.i);
     const numberColumn = data.headers.findIndex(h => /^(num|numero|nº|no)$/.test(normalize(h)));
+    const pagination = overlay.querySelector('.csv-pagination');
+    const previous = overlay.querySelector('.csv-page-prev');
+    const next = overlay.querySelector('.csv-page-next');
+    const pageStatus = overlay.querySelector('.csv-page-status');
+    const mobileResults = overlay.querySelector('.csv-mobile-results');
+    let currentPage = 1;
+    let previousTerm = '';
+    const valuesFor = row => {
+      const values = data.headers.map((_, i) => row[i]);
+      if (modalityIndex < 0) { const catPos = data.headers.findIndex(h => /categoria/i.test(h)); values.splice(catPos < 0 ? 0 : catPos, 0, distance); }
+      return values;
+    };
     const update = () => {
       const term = normalize(search.value.trim());
+      if (term !== previousTerm) { currentPage = 1; previousTerm = term; }
       const exactNumber = /^\d+$/.test(term);
       const rows = data.rows.filter(row => !term || (exactNumber && numberColumn >= 0 ? normalize(row[numberColumn]).trim() === term : searchable.some(i => normalize(row[i]).includes(term))));
-      overlay.querySelector('tbody').innerHTML = rows.slice(0, 500).map(row => {
-        const values = data.headers.map((_, i) => row[i]);
-        if (modalityIndex < 0) { const catPos = data.headers.findIndex(h => /categoria/i.test(h)); values.splice(catPos < 0 ? 0 : catPos, 0, distance); }
+      const pageSize = window.matchMedia('(max-width:650px)').matches ? 25 : 100;
+      const totalPages = Math.max(1, Math.ceil(rows.length / pageSize));
+      currentPage = Math.min(currentPage, totalPages);
+      const start = (currentPage - 1) * pageSize;
+      const visibleRows = rows.slice(start, start + pageSize);
+      overlay.querySelector('tbody').innerHTML = visibleRows.map(row => {
+        const values = valuesFor(row);
         return '<tr>' + values.map((v, i) => '<td class="' + columnClasses[i] + '">' + escapeHTML(v) + '</td>').join('') + '</tr>';
       }).join('');
-      overlay.querySelector('.csv-count').textContent = rows.length + (rows.length === 1 ? ' resultado encontrado' : ' resultados encontrados');
+      mobileResults.innerHTML = visibleRows.map(row => {
+        const values = valuesFor(row);
+        return '<article class="csv-mobile-card">' + values.map((v, i) => '<div class="csv-mobile-row"><div class="csv-mobile-label">' + escapeHTML(displayHeaders[i]) + '</div><div class="csv-mobile-value">' + escapeHTML(v || '—') + '</div></div>').join('') + '</article>';
+      }).join('');
+      const firstShown = rows.length ? start + 1 : 0;
+      const lastShown = Math.min(start + pageSize, rows.length);
+      overlay.querySelector('.csv-count').textContent = rows.length + (rows.length === 1 ? ' resultado encontrado' : ' resultados encontrados') + (rows.length ? ' · exibindo ' + firstShown + '–' + lastShown : '');
+      pageStatus.textContent = 'Página ' + currentPage + ' de ' + totalPages;
+      previous.disabled = currentPage === 1;
+      next.disabled = currentPage === totalPages;
+      pagination.hidden = rows.length <= pageSize;
     };
-    search.addEventListener('input', update); update(); search.focus();
+    previous.addEventListener('click', () => { if (currentPage > 1) { currentPage--; update(); overlay.querySelector('.csv-count').scrollIntoView({block:'nearest'}); } });
+    next.addEventListener('click', () => { currentPage++; update(); overlay.querySelector('.csv-count').scrollIntoView({block:'nearest'}); });
+    search.addEventListener('input', update);
+    window.addEventListener('resize', update, {passive:true});
+    update(); search.focus();
   }).catch(() => { overlay.querySelector('.csv-count').textContent = 'Não foi possível carregar os resultados.'; });
 }
 
