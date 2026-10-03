@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chips.vo3.com.br/sitemap.xml
