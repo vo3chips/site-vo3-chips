@@ -42,16 +42,16 @@ function ensureViewerStyles() {
   const style = document.createElement('style');
   style.id = 'csv-viewer-styles';
   style.textContent = `
-    .csv-viewer{position:fixed;inset:0;z-index:1000;background:rgba(10,15,16,.82);display:flex;align-items:center;justify-content:center;padding:20px}
-    .csv-panel{background:#fff;color:#161b1d;width:min(1180px,100%);max-height:92vh;overflow:auto;border-radius:10px;padding:28px;box-shadow:0 20px 70px rgba(0,0,0,.35)}
+    .csv-viewer{position:fixed;inset:0;z-index:1000;background:rgba(10,15,16,.82);display:flex;align-items:center;justify-content:center;padding:12px}
+    .csv-panel{background:#fff;color:#161b1d;width:min(1600px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;box-sizing:border-box;border-radius:10px;padding:24px;box-shadow:0 20px 70px rgba(0,0,0,.35)}
     .csv-panel h2{margin:4px 0 20px;font-size:clamp(24px,3vw,40px)}
     .csv-close{float:right;border:0;background:#161b1d;color:#fff;border-radius:50%;width:36px;height:36px;font-size:25px;cursor:pointer}
     .csv-search-box{display:flex;gap:12px;align-items:end;margin:16px 0}
     .csv-search-box label{display:block;flex:1;font-weight:700}
     .csv-search-box input{display:block;width:100%;box-sizing:border-box;margin-top:7px;padding:13px 14px;border:2px solid #9aa5a8;border-radius:6px;font-size:16px}
     .csv-count{font-weight:700;margin:10px 0}
-    .csv-table-wrap{overflow:auto;border:1px solid #9aa5a8}
-    .csv-table{border-collapse:collapse;width:100%;min-width:900px;font-size:11px;table-layout:fixed}.csv-table th:nth-child(3),.csv-table td:nth-child(3){width:24%;max-width:280px;white-space:normal;word-break:normal;overflow-wrap:break-word}.csv-table th:nth-child(8),.csv-table td:nth-child(8){width:16%;max-width:190px;white-space:normal;overflow-wrap:anywhere}
+    .csv-table-wrap{width:100%;max-width:100%;overflow:auto;border:1px solid #9aa5a8}
+    .csv-table{border-collapse:collapse;width:max-content;min-width:100%;font-size:11px;table-layout:auto}.csv-table .csv-col-athlete{min-width:220px;max-width:340px;white-space:normal;overflow-wrap:break-word}.csv-table .csv-col-team{min-width:190px;max-width:320px;white-space:normal;overflow-wrap:break-word}
     .csv-table th,.csv-table td{border:1px solid #b7c0c2;padding:9px 4px;text-align:left;white-space:nowrap;vertical-align:middle}
     .csv-table th{background:#e9eff0;color:#111;font-weight:800;position:sticky;top:0;z-index:1}
     .csv-table tr:nth-child(even){background:#f7f9f9}
@@ -60,7 +60,7 @@ function ensureViewerStyles() {
     .csv-pdf-list{display:flex;flex-wrap:wrap;gap:10px}
     .csv-pdf-link{display:inline-block;border:1px solid #738184;border-radius:5px;padding:10px 12px;color:#111;text-decoration:none;background:#f4f7f7;font-weight:700}
     .csv-pdf-link:hover{background:#dff000}
-    @media(max-width:650px){.csv-panel{padding:18px}.csv-search-box{display:block}.csv-search-box label{margin-bottom:12px}}
+    @media(max-width:650px){.csv-viewer{padding:6px}.csv-panel{width:calc(100vw - 12px);max-height:calc(100vh - 12px);padding:16px}.csv-search-box{display:block}.csv-search-box label{margin-bottom:12px}.csv-table .csv-col-athlete{min-width:190px}.csv-table .csv-col-team{min-width:170px}}
   `;
   document.head.append(style);
 }
@@ -79,7 +79,7 @@ function openCSVResult(race, result) {
       <p>Pesquise pelo número, nome do atleta ou equipe.</p>
       <div class="csv-search-box"><label>Buscar resultado<input class="csv-search" type="search" placeholder="Digite número, nome ou equipe" aria-label="Buscar por número, nome ou equipe"></label></div>
       <p class="csv-count">Carregando resultados…</p>
-      <div class="csv-table-wrap"><table class="csv-table"><colgroup><col style="width:3.5%"><col style="width:3%"><col style="width:28%"><col style="width:6%"><col style="width:7%"><col style="width:7%"><col style="width:7%"><col style="width:7%"><col style="width:25%"><col style="width:6.5%"><col style="width:6.5%"></colgroup><thead></thead><tbody></tbody></table></div>
+      <div class="csv-table-wrap"><table class="csv-table"><thead></thead><tbody></tbody></table></div>
       <div class="csv-pdfs"><h3>PDFs oficiais da prova</h3><div class="csv-pdf-list"></div></div>
     </section>`;
   document.body.append(overlay);
@@ -94,21 +94,22 @@ function openCSVResult(race, result) {
   });
   fetch(result.file).then(response => { if (!response.ok) throw Error(); return response.text(); }).then(text => {
     const data = parseCSV(text);
-    const labels = { 'Colocação':'COL', 'Número':'Nº', 'Atleta':'ATLETA', 'Sexo':'SEXO', 'Categoria':'CAT', 'Faixa etária':'F. ETÁRIA', 'Categoria faixa':'COL FAIXA', 'Equipe':'EQUIPE', 'Ritmo':'RITMO', 'Tempo':'TEMPO' };
-    const displayHeaders = data.headers.map(h => labels[h] || h);
+    const labels = { 'mod':'MOD', 'sexo':'SEXO', 'col':'COL', 'colocacao':'COL', 'num':'Nº', 'numero':'Nº', 'nº':'Nº', 'atleta':'ATLETA', 'nome':'ATLETA', 'f etaria':'F. ETÁRIA', 'faixa etaria':'F. ETÁRIA', 'c fx':'COL FAIXA', 'categoria faixa':'COL FAIXA', 'col faixa':'COL FAIXA', 'cat':'CAT', 'categoria':'CAT', 'c cat':'COL CAT', 'col cat':'COL CAT', 'equipe':'EQUIPE', 'cidade':'CIDADE', 'ritmo':'RITMO', 'pace':'RITMO', 'tempo':'TEMPO', 't liquido':'T. LÍQUIDO', 't. liquido':'T. LÍQUIDO' };
+    const displayHeaders = data.headers.map(h => labels[normalize(h)] || h);
+    const columnClasses = displayHeaders.map(h => /atleta|nome/i.test(h) ? 'csv-col-athlete' : /equipe/i.test(h) ? 'csv-col-team' : '');
     const modalityIndex = data.headers.findIndex(h => /modalidade|distancia|distância/i.test(h));
     const distance = result.distance || (race.distances && race.distances[0]) || '';
     if (modalityIndex < 0) { const catPos = displayHeaders.findIndex(h => h === 'CAT'); displayHeaders.splice(catPos < 0 ? 0 : catPos, 0, 'MOD'); }
-    overlay.querySelector('thead').innerHTML = '<tr>' + displayHeaders.map(h => '<th>' + escapeHTML(h) + '</th>').join('') + '</tr>';
+    overlay.querySelector('thead').innerHTML = '<tr>' + displayHeaders.map((h, i) => '<th class="' + columnClasses[i] + '">' + escapeHTML(h) + '</th>').join('') + '</tr>';
     const search = overlay.querySelector('.csv-search');
-    const searchable = data.headers.map((h, i) => ({h: normalize(h), i})).filter(x => /numero|atleta|nome|equipe/.test(x.h)).map(x => x.i);
+    const searchable = data.headers.map((h, i) => ({h: normalize(h), i})).filter(x => /^(num|numero|nº|no)$|atleta|nome|equipe/.test(x.h)).map(x => x.i);
     const update = () => {
       const term = normalize(search.value.trim());
       const rows = data.rows.filter(row => !term || searchable.some(i => normalize(row[i]).includes(term)));
       overlay.querySelector('tbody').innerHTML = rows.slice(0, 500).map(row => {
         const values = data.headers.map((_, i) => row[i]);
         if (modalityIndex < 0) { const catPos = data.headers.findIndex(h => /categoria/i.test(h)); values.splice(catPos < 0 ? 0 : catPos, 0, distance); }
-        return '<tr>' + values.map(v => '<td>' + escapeHTML(v) + '</td>').join('') + '</tr>';
+        return '<tr>' + values.map((v, i) => '<td class="' + columnClasses[i] + '">' + escapeHTML(v) + '</td>').join('') + '</tr>';
       }).join('');
       overlay.querySelector('.csv-count').textContent = rows.length + (rows.length === 1 ? ' resultado encontrado' : ' resultados encontrados');
     };
